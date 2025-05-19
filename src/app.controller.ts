@@ -8,8 +8,14 @@ export class AppController {
   @Get('send')
   sendMessage() {
     this.client.emit('tag', {
-      name: 'CreateTagJob',
-      data: { method: 'create', type: 'crud' },
+      name: 'UpdateContactJob',
+      data: {
+        id: '507f1f77bcf86cd799439011',
+        workspace_id: '67d9650807b7dadc33aae00f',
+        name: 'new updated',
+        color: 'red',
+        contacts: [20, 21],
+      },
     });
     console.log('Added to queue');
     return true;
